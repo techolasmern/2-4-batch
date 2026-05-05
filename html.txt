@@ -1,0 +1,7 @@
+- What is html?
+- Use
+- Structure
+
+- Tag -> A basic building block of a webpage. It tells the browser how to display the content.
+element -> opening -> content -> closing
+Attributes -> To provide additional information
