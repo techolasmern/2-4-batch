@@ -22,3 +22,20 @@ Insert an image using <img>
 Alt attribute & image paths
 
 Table + Forms
+
+<header>, <footer>, <nav>, <section>, <article>
+
+Final Project
+Create a 5-page HTML website:
+ Home
+ About
+ Services / Products
+ Gallery
+ Contact (with form)
+Use:
+✔ Semantic structure
+✔ Lists
+✔ Table
+✔ Images
+✔ Links
+✔ Forms
