@@ -39,3 +39,14 @@ Use:
 ✔ Images
 ✔ Links
 ✔ Forms
+
+- Semantic elements -> meaningful tags
+<article>
+<footer>
+<header>
+<main>
+<nav>
+<section>
+<video>
+<audio>
+<time>
