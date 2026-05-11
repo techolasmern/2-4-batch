@@ -1,0 +1,8 @@
+<!-- CSS SELECTORS -->
+
+        - Universal Selector
+        - ID Selector
+        - Class Selector
+        - Tag Selector / Element Selector
+        - Combinator Selector
+        - Group Selector
