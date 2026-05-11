@@ -9,3 +9,25 @@
 .demo_class{
     color: blue;
 }
+
+h1{
+    color: purple;
+}
+
+.container .child{
+    color: green;
+}
+
+.g1{
+    color: yellow;
+}
+.g2{
+    color: pink;
+}
+.g3{
+    color: orange;
+}
+
+.g1, .g2, .g3{
+    background-color: #000000;
+}

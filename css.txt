@@ -4,5 +4,5 @@
         - ID Selector
         - Class Selector
         - Tag Selector / Element Selector
-        - Combinator Selector
+        - Child Selector
         - Group Selector
