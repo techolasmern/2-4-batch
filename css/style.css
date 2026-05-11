@@ -31,3 +31,7 @@ h1{
 .g1, .g2, .g3{
     background-color: #000000;
 }
+
+.demo_class_1{
+    text-align: start;
+}
