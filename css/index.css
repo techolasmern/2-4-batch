@@ -1,11 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100..900;1,100..900&display=swap'); */
 
-.container{
+*{
+    margin: 0;
+}
+
+/* .container{
     height: 180px;
     width: 180px;
     margin-top: 100px;
-    margin-left: 100px;
-}
+    margin-left: 100px; */
+/* } */
 
 .inner-container{
     height: 100px;
@@ -48,4 +52,14 @@
 
     border-top-right-radius: 50px;
     border-bottom-left-radius: 50px;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    /* background-image: url(../image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    background: url(../image.png) no-repeat center/cover;
 }
