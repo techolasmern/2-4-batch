@@ -6,3 +6,8 @@
         - Tag Selector / Element Selector
         - Child Selector
         - Group Selector
+
+Text properties: color, align, spacing
+Font properties: size, style, weight, family
+Background properties: color, image, repeat, position
+Borders: width, style, radius,color,border sides, border shorthand
