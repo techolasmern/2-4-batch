@@ -1,0 +1,19 @@
+/* 
+    display: inline, block, inline-block, flex, grid;
+*/
+
+.d-inline{
+    display: inline;
+}
+
+.d-block{
+    display: block;
+    height: 150px;
+    width: 150px;
+}
+
+.d-inline-block{
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
