@@ -1,0 +1,31 @@
+/* Decendant Selector */
+
+/*  
+.container p{
+    background-color: green;
+}
+*/
+
+/* Child Selector */
+
+/*
+.container > p{
+    background-color: red;
+}
+*/
+
+/* Next Sibling Selector */
+
+/*  
+.container + p {
+    background-color: yellow;
+}
+*/
+
+/* Subsequent-sibling Selector */
+
+/*  
+.container ~ .demo{
+    background-color: gray;
+}
+*/
