@@ -1,0 +1,5 @@
+.d-grid{
+    display: grid;
+    grid-template-columns: repeat(12, 30px);
+    grid-template-rows: repeat(12, 10px);
+}
