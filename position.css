@@ -51,4 +51,15 @@
     top: 50px;
 }
 
+.container{
+    position: relative;
+}
+
+.container > .top{
+    position: absolute;
+    top: 40px;
+    left: 70px;
+    color: white;
+}
+
 /* relative, absolute, fixed, sticky */
