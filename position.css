@@ -20,4 +20,35 @@
     bottom: 0;
 }
 
+/* fixed */ 
+
+.p-fixed{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    position: fixed;
+    right: 50px;
+    top: 50px;
+}
+
+.p-sticky{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    position: sticky;
+    top: 50px;
+}
+
 /* relative, absolute, fixed, sticky */
