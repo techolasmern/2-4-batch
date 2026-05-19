@@ -23,3 +23,29 @@
     left: 0px;
     z-index: -1;
 }
+
+.card-container{
+    display: flex;
+    gap: 10px;
+    /* overflow: scroll; */
+    overflow-x: scroll;
+}
+
+.card{
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 10px;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card > section{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
