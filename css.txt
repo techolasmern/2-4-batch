@@ -19,3 +19,9 @@ Combinator
     - Next Sibling (+): Select an element that is directly after a specific element.
     - Subsequent-sibling (~): Selects all elements that are next siblings of a specified element.
 
+Z-index, Overflow , Opacity, CSS Variables
+The z-index property controls the stacking order of elements.
+The overflow property controls what happens when content is too large for its container.
+The opacity property controls transparency.
+Variables are declared using --.
+Use variables with var().
