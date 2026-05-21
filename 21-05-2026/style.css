@@ -15,14 +15,29 @@ span:active{
     padding: 6px;
     padding-inline: 15px;
     border: none;
-    border-radius: 20px;
-    box-shadow: 2px 2px 3px gray;
-    /* cursor: not-allowed; */
+    /* box-shadow: 2px 2px 3px gray; */
+    cursor: pointer;
+    position: relative;
 }
 
-.btn:hover{
-    box-shadow: 4px 4px 3px gray;
+.btn::before{
+    content: "";
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transition: 0.5s;
 }
+
+.btn:hover::before{
+    width: 100%;
+}
+
+/* .btn:hover{
+    box-shadow: 4px 4px 3px gray;
+} */
 
 .btn:active{
     box-shadow: none;
@@ -68,5 +83,12 @@ p::first-letter{
 
 p::first-line{
     background-color: red;
-    
+
 }
+
+/* ::before, ::after */
+
+.demo::after{
+    content: "😶";
+}
+
