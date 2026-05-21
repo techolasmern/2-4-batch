@@ -48,3 +48,25 @@ a:visited{
     border: 2px solid red;
     border-radius: 10px;
 }
+
+/* psudo elements */
+
+/* ::selection  */
+
+p::selection{
+    background-color: red;
+    color: white;
+}
+
+/* ::first-letter, ::first-line */
+
+p::first-letter{
+    background-color: black;
+    font-size: 30px;
+    color: red;
+}
+
+p::first-line{
+    background-color: red;
+    
+}
