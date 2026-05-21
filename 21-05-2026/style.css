@@ -1,0 +1,29 @@
+span{
+    color: green;
+}
+
+span:hover{
+    color: red;
+}
+
+span:active{
+    color: blue;
+}
+
+.btn{
+    background-color: green;
+    padding: 6px;
+    padding-inline: 15px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px gray;
+}
+
+.btn:hover{
+    box-shadow: 4px 4px 3px gray;
+}
+
+.btn:active{
+    box-shadow: none;
+    scale: 0.98;
+}

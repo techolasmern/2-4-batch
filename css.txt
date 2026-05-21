@@ -25,3 +25,6 @@ The overflow property controls what happens when content is too large for its co
 The opacity property controls transparency.
 Variables are declared using --.
 Use variables with var().
+
+psudo-class: target an element's state
+psudo-elements: target specific parts of an element or create virtual content
