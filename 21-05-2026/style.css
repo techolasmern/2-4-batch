@@ -92,3 +92,19 @@ p::first-line{
     content: "😶";
 }
 
+/* psudo classes */
+
+/* first-child, last-child, nth-child */
+
+/* ul li:first-child{
+    background-color: red;
+}
+
+ul li:last-child{
+    background-color: yellow;
+} */
+
+/* number, even or 2n, odd or 2n+1, 3n -> every 3rd, n+3: from 4th onward, -n+3: first 3 elements */
+ul li:nth-child(-n+4){
+    background-color: gray;
+}
