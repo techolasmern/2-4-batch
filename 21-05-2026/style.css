@@ -17,6 +17,7 @@ span:active{
     border: none;
     border-radius: 20px;
     box-shadow: 2px 2px 3px gray;
+    /* cursor: not-allowed; */
 }
 
 .btn:hover{
@@ -26,4 +27,24 @@ span:active{
 .btn:active{
     box-shadow: none;
     scale: 0.98;
+}
+
+/* :link, :visited  */
+
+a:link{
+    color: red;
+}
+
+a:visited{
+    color: green;
+}
+
+.username{
+    outline: none;
+    border: 2px solid gray;
+}
+
+.username:focus{
+    border: 2px solid red;
+    border-radius: 10px;
 }
