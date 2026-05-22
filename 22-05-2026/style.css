@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .container{
@@ -28,8 +29,52 @@
 
 }
 
+header>ul {
+    display: none;
+}
+
+.btn-talk {
+    display: none;
+}
+
+.menu{
+    display: inline-block;
+    font-size: 30px;
+    color: gray;
+}
+
 @media screen and (min-width: 768px){
     #img_1{
-        display: inline;
+        display: inline; 
+    }
+
+    header > ul{
+        display: flex;
+        color: white;
+        gap: 15px;
+    }
+
+    .btn-talk {
+        display: inline-block;
+        background-color: orangered;
+        color: white;
+        border: none;
+        padding: 9px;
+        padding-inline: 16px;
+        border-radius: 20px;
+    }
+
+    .menu{
+        display: none;
     }
 }
+
+header{
+    height: 80px;
+    background-color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 15px;
+}
+
