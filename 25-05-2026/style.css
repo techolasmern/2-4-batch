@@ -1,0 +1,23 @@
+/* transform, transition, rotate, translate, scale */
+
+*{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box{
+    width: 100px; 
+    height: 100px;
+    background-color: red;
+    /* scale: 2;  */
+    transition: 1000ms;  
+    /* transform: scale(1); */
+    transform: rotateY(80deg)
+
+}
