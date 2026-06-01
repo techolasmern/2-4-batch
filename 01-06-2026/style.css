@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+
+    animation-name: slideToRight;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3000ms; /* duration in seconds or milliseconds */
+}
+
+@keyframes slideToRight{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(600px);
+        background-color: red;
+        border-radius: 100px;
+    }
+}
