@@ -2,7 +2,7 @@
     margin: 0;
 }
 
-.box{
+/* .box{
     width: 100px;
     height: 100px;
     background-color: green;
@@ -10,7 +10,7 @@
     animation-name: slideToRight;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-duration: 3000ms; /* duration in seconds or milliseconds */
+    animation-duration: 3000ms; 
 }
 
 @keyframes slideToRight{
@@ -21,5 +21,45 @@
         transform: translateX(600px);
         background-color: red;
         border-radius: 100px;
+    }
+} */
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    position: relative;
+
+    /* animation-name: move;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite; */
+    animation: move 5s linear infinite; /* shorthand - animation-name, animation-duration, animation-timing-function, animation-iteration-count */
+}
+
+/* 0%, 25%, 50%, 75%, 100% */
+@keyframes move{
+    0%, 100%{
+        top: 0;
+        left: 0;
+        rotate: 0deg;
+    }
+    25%{
+        top: 0;
+        left: 600px;
+        background-color: red;
+    }
+    50%{
+        top: 600px;
+        left: 600px;
+        background-color: blueviolet;
+    }
+    75%{
+        top: 600px;
+        left: 0;
+        background-color: aqua;
+    }
+    100%{
+        rotate: 360deg;
     }
 }
