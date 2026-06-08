@@ -1,0 +1,11 @@
+Project — Small Business Landing Page
+Includes:
+     Header with navbar
+     Carousel
+     Services section
+     Testimonials (cards)
+     Footer
+Practice Goals
+     Use grid system properly
+     Use components + utilities
+     Make it fully responsive
