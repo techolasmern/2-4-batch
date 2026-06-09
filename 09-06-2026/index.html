@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS</h1>
+    <script>
+        console.log("Hello World");
+        document.write("Hello World");
+
+        // theory
+
+        // variable: container for storing data.
+        // identifier: name of the variable.
+        // value: data stored in the variable.
+        // declaration: Creating a variable.
+
+        // rule for naming variables:
+        // 1. start with a letter, underscore or dollar sign.
+        // 2. can only contain letters, numbers, underscores and dollar signs.
+        // 3. Cannot be reserved words. (keywords); function
+
+        // cases -> camelCase, PascalCase, snake_case, kebab-case
+
+        // camelCase: first letter of each word except the first is capitalized.
+        // Eg: myGrantedPermission;
+        // PascalCase: first letter of each word is capitalized.
+        // Eg: MyGrantedPermission;
+        // snake_case: each word is separated by an underscore.
+        // Eg: my_granted_permission;
+        // kebab-case: each word is separated by a hyphen.
+        // Eg: my-granted-permission;
+
+        // data type -> number, string, boolean, object, undefined
+
+        // number: whole number or decimal number.
+        // string: sequence of characters.
+        // boolean: true or false.
+        // object: collection of properties.
+        // undefined: absence of a value.
+
+        // var, let, const -> declaration keywords.
+        // 2009 -> ES5 (old version)
+        // var: old keyword, not recommended.
+        // 2015 -> ES6 (new version)
+        // let: new keyword, recommended.
+        // const: new keyword, recommended.
+
+        var a = 10;
+        console.log(a);
+        var a = "hello";
+        console.log(a);
+        a = true;
+        console.log(a);
+        // var -> re-declaration is allowed & re-assignment is allowed.
+
+        let b = 100;
+        console.log(b);
+        // let b = "Hello";
+        // console.log(b); // Identifier 'b' has already been declared 
+        b = "hello";
+        console.log(b);
+        // let -> re-declaration is not allowed & re-assignment is allowed.
+
+        const pi = 3.14;
+        console.log(pi);
+        // pi = 10
+        // console.log(pi)
+        // const -> re-declaration is not allowed & re-assignment is not allowed.
+
+        // scope: visibility of the variable. access level.
+
+        // global scope: available in the whole program.
+        // function scope: available only in the function where it is declared.
+        // block scope: available in the block where it is declared.
+        
+        // block scope sample
+        // let ab = 1000;
+        // {
+        //     let abc = 2000;
+        // }
+        // console.log(abc);
+        
+    </script>
+</body>
+</html>
