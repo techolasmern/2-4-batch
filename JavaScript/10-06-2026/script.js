@@ -23,7 +23,7 @@ const pi = 3.14;
 
 // Operators
 
-// Assignment Operator,  Arithmatic, Comparison, Unary Operator
+// Assignment Operator,  Arithmetic, Comparison, Unary Operator
 
 let num = 12;
 // +=, -=, *=, /=
