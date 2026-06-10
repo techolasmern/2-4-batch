@@ -57,3 +57,16 @@ num1 = num1 * num2; // a = a * b -> a *= b;
 num1 = num1 / num2; // a = a / b -> a /= b;
 
 console.log(num1);
+
+
+// comparison -> ==, ===, !=, !==, <, <=, >, >=
+
+console.log(25 == "25"); // true (only check values)
+console.log(25 === "25"); // false (check both value and data type)
+console.log(20 != "20"); // false
+console.log(20 !== 20); // true
+
+console.log(10 < 20);  // less than
+console.log(100 > 20); // greater than
+console.log(10 <= 10) // true
+console.log(20 >= 20);
