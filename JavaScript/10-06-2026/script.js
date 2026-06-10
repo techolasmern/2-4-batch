@@ -70,3 +70,31 @@ console.log(10 < 20);  // less than
 console.log(100 > 20); // greater than
 console.log(10 <= 10) // true
 console.log(20 >= 20);
+
+// Unary operator
+
+// increment and decrement
+// ++, --
+
+// pre & post -> pre-increment, pre-decrement, post-increment, post-decrement
+// post => first value will be used. then increment or decrement.
+// pre => first increment or decrement the value will be used.
+
+let n1 = 10;
+let n2 = 10;
+let n5 = 10;
+let n6 = 10;
+
+// pre increment
+let n3 = ++n1;
+console.log(n3, n1);
+// pre decrement
+let n4 = --n2;
+console.log(n4, n2);
+
+// post increment
+let n7 = n5++;
+console.log(n7, n5);
+// post decrement
+let n8 = n6--;
+console.log(n8, n6);
