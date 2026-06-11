@@ -37,3 +37,11 @@ function getVolume(area, h) {
 const ar = getArea(10, 20);
 const v = getVolume(ar, 30);
 console.log(v);
+
+function sumOfNNumbers(limit) {
+    const sum = (limit * (limit + 1)) / 2;
+    return sum;
+}
+
+const r = sumOfNNumbers(100);
+console.log(r);
