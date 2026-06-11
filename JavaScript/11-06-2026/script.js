@@ -45,3 +45,16 @@ function sumOfNNumbers(limit) {
 
 const r = sumOfNNumbers(100);
 console.log(r);
+
+// const enteredValue = prompt("Enter a value...");
+// console.log(enteredValue);
+
+// logical operators
+
+// AND, OR, NOT
+// &&, ||, !
+
+// 0, null, undefind, ""
+console.log(true && true && false && true); // => false;
+console.log(false || false || true || false); // => true;
+console.log(!false);
