@@ -14,3 +14,25 @@
         F = Temperature in Fahrenheit (°F)
 6. Find the area of a circle whose diameter is 20 cm. (pi = 3.14)
 7. Find the speed of a car that travels 180 km in 3 hours. (S = DT/T);
+
+
+Create a JavaScript program that performs the following arithmetic operations on two numbers:
+    Addition
+    Subtraction
+    Multiplication
+    Division
+
+Create a simple ATM application in JavaScript.
+    Requirements:
+        Initialize the available balance as:
+            let amountAvailable = 100000;
+        Allow the user to:
+            Withdraw money
+            Deposit money
+        Use prompt() to get the transaction amount from the user.
+        After each transaction, display the updated account balance.
+
+Create a JavaScript program that:
+    Takes three numbers as input using prompt().
+    Calculates the sum of the three numbers.
+    Displays the result to the user.
