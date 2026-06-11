@@ -1,0 +1,16 @@
+1.  Find the sum of the first N natural numbers.
+2.  A student scored 72 marks out of 90. Find the percentage obtained.
+3.  Find 25% of 480.
+4.  Find the simple interest on ₹5,000 at 8% per annum for 3 years.
+    SI = (P * R * T)/100
+    - Where:
+        P = Principal amount
+        R = Rate of interest
+        T = Time
+5. Convert 30°C into Fahrenheit.
+    F = (9/5 * C) + 32
+    - Where:
+        C = Temperature in Celsius (°C)
+        F = Temperature in Fahrenheit (°F)
+6. Find the area of a circle whose diameter is 20 cm.
+7. Find the speed of a car that travels 180 km in 3 hours.
