@@ -115,3 +115,37 @@ console.log(res);
 for (let data = 1; data <= 10; data++){
     console.log(data) // 0, 1, 2, 3 .... 9
 }
+
+// sum of n numbers
+
+function sumOfNNumbers(n) {
+    let sum = 0;
+    for (let k = 1; k <= n; k++){
+        sum = sum + k;
+        // 0 + 1 = 1 + 2 = 3 + 3 = 6 + 4 = 10 + 5 = 15.....45 + 10 = 55
+    }
+    return sum;
+}
+
+console.log(sumOfNNumbers(100));
+
+// prime number -> 2 factor -> 1, itself
+// 0,1, 2, 3, 5, 7, 11
+
+const num = 20;
+
+// 2 - 10 ->
+
+// 10/5 = 2, 10/10 = 1
+
+function is_prime(num) {
+    if (num == 0 || num == 1) return "Not a prime number";
+    for (let d = 2; d <= num / 2; d++){
+        if (num % d == 0) {
+            return "Not a prime number";
+        }
+    }
+    return "Is a prime number";
+}
+
+console.log(is_prime(0));
