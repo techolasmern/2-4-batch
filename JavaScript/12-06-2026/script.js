@@ -46,3 +46,30 @@ if (n1 > n2 && n1 > n3) {
     console.log("n3 is greater than n1, n2");
 }
 
+// function getDay(n) {
+//     if (n == 1) {
+//         return "Sunday";
+//     } else if (n == 2) {
+//         return "Monday";
+//     } else if (n == 3) {
+//         return "Tuesday"
+//     } else {
+//         return "Invalid input";
+//     }
+// }
+
+function getDay(n) {
+    if (n == 1) {
+        return "Sunday";
+    }
+    if (n == 2) {
+        return "Monday";
+    }
+    if (n == 3) {
+        return "Tuesday"
+    }
+    return "Invalid input";
+}
+
+const day = getDay(1);
+console.log(day);
