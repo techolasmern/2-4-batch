@@ -73,3 +73,29 @@ function getDay(n) {
 
 const day = getDay(1);
 console.log(day);
+
+// calculator
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// console.log(add(30, 40));
+
+function calculator(firstNumber, operator, secondNumber) {
+    let result;
+    if (operator == "+") {
+        result = firstNumber + secondNumber;
+    }
+    if (operator == "-") {
+        result = firstNumber - secondNumber;
+    }
+    if (operator == "*") {
+        result = firstNumber * secondNumber;
+    }
+    // /, %
+    return result;
+}
+
+const res = calculator(10, "*", 20);
+console.log(res);
