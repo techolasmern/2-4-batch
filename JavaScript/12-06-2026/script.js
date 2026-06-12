@@ -99,3 +99,19 @@ function calculator(firstNumber, operator, secondNumber) {
 
 const res = calculator(10, "*", 20);
 console.log(res);
+
+// Loop -> A loop is a sequence of instructions or actions that repeats automatically
+//         until a specific stopping condition is met.
+
+// for loop, while, do while, for in, for of
+// for loop
+
+// for (<init>; <condn>; <inc/dec/update>) {
+//     // statement for repeat
+// }
+
+// print 1 - 10;
+
+for (let data = 1; data <= 10; data++){
+    console.log(data) // 0, 1, 2, 3 .... 9
+}
