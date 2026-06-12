@@ -149,3 +149,8 @@ function is_prime(num) {
 }
 
 console.log(is_prime(0));
+
+// factorial of a number; n = 10;
+// print even numbers
+// print odd numbers
+// print numbers that divisible by 6; (from n numbers)
