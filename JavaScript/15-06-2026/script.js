@@ -107,3 +107,27 @@ console.log(slv);
 largest = 200;
 secondLargest = 150
 199 > largest
+
+// palindrome
+
+const n = 123;
+
+function isPalindrome(number) {
+    const temp = number;
+    let rev = 0;
+    for (number; number > 0; number = parseInt(number / 10)){
+        const rem = number % 10;
+        rev = rev * 10 + rem;
+    }
+    return rev == temp;
+}
+
+console.log(isPalindrome(123))
+// rev = 0;
+// 123 -> 123 % 10 => (3) rev = 0 * 10 + 3 = 3 -> 123/10 = 12.3 -> parseInt(12.3) -> 12 - number
+// 12 -> 12 % 10 => (2) rev = 3 * 10 + 2 = 32 -> 12/10 = 1.2 -> parseInt(1.2) -> 1 -> number
+// 1 -> 1%10 => (1) rev = 32 * 10 + 1 = 321 -> 1/10 => 0.1 -> parseInt(0.1) -> 0 -> number
+// number > 0
+
+
+// 15345 -> 1^5 + 5^5 + 3^5 + 4^5 + 5^5 = 153 - armstrong number sample
