@@ -44,3 +44,66 @@ function printFilledSquarePattern(num) {
 }
 
 printFilledSquarePattern(2)
+
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
+// *
+// * * *
+// * * * * *
+// * * * * * * *
+// * * * * * * * * *
+
+// largest, second largest, palindrome, armstrong number
+
+// string -> collection of char.
+// array -> collection of elements
+
+const number = 10;
+
+const str = "Hello"; // index - 0 ( starting with 0)
+const studentNames = ["Amal", "Anjana", "Hari", "Kevin"]; // index
+
+console.log(str[0]);
+console.log(studentNames[2]);
+// 0-9
+const numbers = [1, 100, 2, 3, 4, 5, 6, 7, 34, 150, 23, 86, 41, 97, 35, 75, 46, 200, 199];
+
+function getLargestValueFromArray(arr) {
+    let largest = arr[0]; // 97
+    for (let i = 0; i < arr.length; i++){
+        const num = arr[i];
+        if (num > largest) {
+            largest = num;
+        }
+    }
+    return largest;
+}
+
+const lv = getLargestValueFromArray(numbers);
+// console.log(lv);
+
+function getSecondLargestValueFromArray(arr) {
+    let largest = arr[0];
+    let secondLargest = -Infinity;
+    for (let i = 0; i < arr.length; i++) {
+        const num = arr[i];
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num != largest && secondLargest < num) {
+            secondLargest = num;
+        }
+    }
+    return secondLargest;
+}
+
+const slv = getSecondLargestValueFromArray(numbers);
+console.log(slv);
+
+largest = 200;
+secondLargest = 150
+199 > largest
