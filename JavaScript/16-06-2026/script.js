@@ -20,10 +20,65 @@ do {
 } while (k < 0); // condition
 console.log("End of loop");
 
-let isPasswordCorrect = false;
-do {
-    const res = prompt("Enter password");
-    if (res == "123") {
-        break;
+// let isPasswordCorrect = false;
+// do {
+//     const res = prompt("Enter password");
+//     if (res == "123") {
+//         break;
+//     }
+// } while (!isPasswordCorrect);
+
+function isPalindrome(number) {
+    let temp = number;
+    let rev = 0;
+    for (temp; temp > 0; temp = parseInt(temp / 10)) {
+        const rem = temp % 10;
+        rev = rev * 10 + rem;
     }
-} while (!isPasswordCorrect);
+    return rev == number;
+}
+
+function checkIsPalindrome(number) {
+    let temp = number;
+    let rev = 0;
+    while (temp > 0) {
+        const rem = temp % 10;
+        rev = rev * 10 + rem;
+        temp = parseInt(temp / 10);
+    }
+    return rev == number;
+}
+
+console.log(checkIsPalindrome(12121))
+
+// armstrong number = 153
+
+function getNumberLength(num = 0) {
+    // -----------------------------------------
+    // first method
+    // const str = num.toString();
+    // return str.length;
+    // --------------------------------------
+    let digits = 0;
+    while (num > 0) {
+        num = parseInt(num / 10); // 1/10 = 0
+        digits++ // +3
+    }
+    return digits;
+}
+
+// 153
+
+function is_armstrong(num) {
+    const pow = getNumberLength(num);
+    let sum = 0;
+    let temp = num;
+    while (num > 0) {
+        const rem = num % 10;
+        sum += rem ** pow;
+        num = parseInt(num / 10);
+    }
+    return sum == temp;
+}
+
+console.log(is_armstrong(153));
