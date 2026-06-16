@@ -131,3 +131,4 @@ console.log(isPalindrome(123))
 
 
 // 15345 -> 1^5 + 5^5 + 3^5 + 4^5 + 5^5 = 153 - armstrong number sample
+

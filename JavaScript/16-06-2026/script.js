@@ -82,3 +82,32 @@ function is_armstrong(num) {
 }
 
 console.log(is_armstrong(153));
+
+// value swap
+let a = 10;
+let b = 20;
+
+let temp = a;
+a = b;
+b = temp;
+
+console.log(a, b);
+
+// sorting
+
+const arr = [5, 2, 7, 4, 8, 1, 9, 0, 3, 6];
+
+function sort(arr=[]) {
+    for (let i = 0; i < arr.length - 1; i++){
+        for (let j = i + 1; j < arr.length; j++){
+            if (arr[j] < arr[i]) {
+                const temp = arr[j];
+                arr[j] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+console.log(sort(arr));
