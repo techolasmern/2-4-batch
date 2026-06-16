@@ -111,3 +111,14 @@ function sort(arr=[]) {
 }
 
 console.log(sort(arr)); 
+
+const ar = [1, 3, 5, 7, 9, 2, 4, 6, 8, 10]; // 10/2 = 5, 3/2 = 1.5
+console.log(ar);
+for (let idx = 0; idx <= ar.length / 2 ; idx++){
+    const leftIndex = idx; // 0,1,2,3,4,5
+    const rightIndex = ar.length - 1 - idx; // 10,9,8,7,6,5
+    const temp = ar[leftIndex];
+    ar[leftIndex] = ar[rightIndex];
+    ar[rightIndex] = temp;
+}
+console.log(ar);
