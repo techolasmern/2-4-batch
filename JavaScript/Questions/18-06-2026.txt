@@ -40,3 +40,9 @@
         B → Good
         C → Average
         D → Needs Improvement
+
+9.  ATM Menu ( Switch + Loop )
+        1. Check Balance
+        2. Deposit
+        3. Withdraw
+        4. Exit
