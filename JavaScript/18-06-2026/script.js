@@ -34,3 +34,46 @@ console.log(res);
 //     res = "Human"
 // }
 // console.log(res);
+
+// Switch -> condition
+
+switch (2) {
+    case 1:
+        console.log(1);
+        break;
+    case 2:
+        console.log(2);
+        break;
+    case 3:
+        console.log(3);
+        break;
+    default:
+        console.log("Invalid input");
+}
+
+const getDay = (d) => {
+    switch (d) {
+        case 1:
+            return "Sunday"; 
+        case 2:
+            return "Monday";
+        // complete case 3 - 7
+        default:
+            return "Invalid input";
+    }
+}
+
+console.log(getDay(3));
+
+// odd or even
+
+const getNumberIsOddOrEven = (number) => {
+    switch (number % 2) {
+        case 0:
+            return "Even"
+        case 1:
+            return "Odd"
+    }
+}
+
+console.log(getNumberIsOddOrEven(11))
