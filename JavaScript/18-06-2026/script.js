@@ -63,6 +63,8 @@ const getDay = (d) => {
     }
 }
 
+// print months
+
 console.log(getDay(3));
 
 // odd or even
