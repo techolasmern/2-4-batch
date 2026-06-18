@@ -1,0 +1,25 @@
+1.  Repeated Number Triangle
+        1
+        2 2
+        3 3 3
+        4 4 4 4
+        5 5 5 5 5
+
+2.  Number Triangle
+        1
+        1 2
+        1 2 3
+        1 2 3 4
+        1 2 3 4 5
+
+3.  Multiplication Table
+    
+    For n = 5
+        5 x 1 = 5
+        5 x 2 = 10
+        ...
+        5 x 10 = 50
+
+4.  Sum of Digits
+        input: 1234
+        result: 10
