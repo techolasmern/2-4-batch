@@ -38,3 +38,40 @@ console.log(txt.trimStart()); // remove white spaces (start)
 console.log(txt.trimEnd()); // remove white spaces (end)
 
 
+// Array methods
+
+const array = [10, 20, 30, 40, 50, 60];
+
+// array.push(70, 80, 90);
+// array.pop();
+
+// array.unshift(-30, -20, -10, 0);
+// array.shift();
+
+console.log(array[2]);
+console.log(array.at(3));
+
+console.log(array.length); 
+
+console.log(array.indexOf(50));
+console.log(array.includes(310));
+
+console.log(array.slice(0, 2));
+console.log(array.slice(-2));
+console.log(array.slice(0, -2));
+
+const idx = array.indexOf(60);
+array[idx] = 500;
+
+console.log(array);
+// console.log(array);
+
+console.log(array.join(" - "));
+
+// splice;
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+arr.splice(2, 0, 30, 40, 50, 60, 70);
+
+console.log(arr);
