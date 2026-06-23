@@ -66,3 +66,18 @@ const getArea = (l, b, volumeCallback, displayCallback) => {
 }
 
 getArea(10, 20, getVolume, finalDisplay);
+
+// Loop
+
+const runLoop = (arr = [], callback) => {
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        callback(element, i, arr);
+    }
+}
+
+runLoop([40, 37, 86, 17, 92, 30, 63, 76], (element, index, array) => {
+    console.log("Element:", element, "Index:", index, "Array:", array);
+});
+
+// array methods -> forEach, map, filter, find, reduce, some, every
