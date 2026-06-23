@@ -24,10 +24,45 @@ const display = (value) => {
 
 // const sampleFunc = display;
 
-const inputNumber = (data, Callback) => {
-    Callback(data);
+const inputNumber = (data, callback) => {
+    callback(data);
 }
 
 const number = 10;
 
 inputNumber(number, display);
+
+// sum
+
+const displaySum = (sum) => {
+    console.log(sum);
+}
+
+const calculateSum = (a, b, callback) => {
+    const sum = a + b;
+    callback(sum);
+}
+
+calculateSum(10, 20, displaySum);
+calculateSum(20, 40, displaySum);
+
+// calculateSum -> Higher order function
+// displaySum -> First order function
+
+// area, volume, display
+
+const finalDisplay = (value) => {
+    console.log(value);
+}
+
+const getVolume = (area, h, displayCallback) => {
+    const volume = area * h;
+    displayCallback(volume);
+}
+
+const getArea = (l, b, volumeCallback, displayCallback) => {
+    const area = l * b;
+    volumeCallback(area, 20, displayCallback);
+}
+
+getArea(10, 20, getVolume, finalDisplay);
