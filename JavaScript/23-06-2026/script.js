@@ -85,20 +85,25 @@ runLoop([40, 37, 86, 17, 92, 30, 63, 76], (element, index, array) => {
 // questions
 
 // remove middle element using push and pop;
-const arr = [28, 30, 41, 27, 83, 92, 52]; // 6, 7/2 = 3.5 8/4 = 4
-console.log(arr);
+const arr = [28, 30, 41, 27, 27, 83, 92, 52]; // 6, 7/2 = 3.5 8/4 = 4 // 
 
 const removedElements = [];
-for (let i = 0; i < arr.length / 2; i++){
+const upto = arr.length / 2;
+
+for (let i = 0; i <= upto; i++){
     const removed = arr.pop();
     removedElements.push(removed);
 }
-arr.pop()
+
+for (let j = 0; j <= arr.length % 2; j++){
+    removedElements.pop();
+}
+
 for (let k = 0; removedElements.length > 0; k++){
     const removed = removedElements.pop();
     arr.push(removed);
 }
 
-console.log(arr, removedElements);
+console.log(arr);
 
 
