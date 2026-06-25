@@ -50,3 +50,7 @@ console.log(resArray);
 const responseArr = arr.map((val) => val % 3 == 0 ? "D by 3" : val);
 console.log(responseArr);
 
+// Filter all even numbers from an array.
+// Replace each number in the array with its square.
+// Replace every even number in the array with half of its value.
+
