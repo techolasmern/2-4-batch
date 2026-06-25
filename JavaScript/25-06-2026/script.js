@@ -54,3 +54,26 @@ console.log(responseArr);
 // Replace each number in the array with its square.
 // Replace every even number in the array with half of its value.
 
+// find, some, every, reduce
+
+// find
+const responseData = arr.find((element) => element % 3 == 0);
+console.log(responseData);
+
+// some
+const bool = arr.some((element) => element % 81 == 0);
+console.log(bool);
+
+// every
+const boolRes = arr.every((element) => element % 1 == 0);
+console.log(boolRes);
+
+// const arr = [10, 40, 20, 70, 81, 30, 60];
+
+// reduce -> returns a single value
+const redRes = arr.reduce((sum, cv) => sum * cv, 1);
+console.log(redRes);
+
+// let sum = 0;
+// sum += currentElement
+// return sum;
