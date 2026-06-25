@@ -1,0 +1,22 @@
+Note: Use arrow functions for each problem.
+
+1.  const numbers = [2, 4, 6, 8, 10];
+    Create a new array containing the square of each number.
+2.  const numbers = [5, 12, 7, 18, 3, 20];
+    Return only numbers greater than 10.
+3.  const numbers = [10, 20, 30, 40, 50];
+    Find the sum of all numbers.
+4.  const fruits = ["apple", "banana", "mango", "orange"];
+    Convert all fruit names to uppercase.
+5.  const names = ["Sam", "Alexander", "John", "Christopher", "Tom"];
+    Return names with more than 5 characters.
+6.  const words = ["hello", "world", "javascript"];
+    Find the total number of characters in all words.
+7.  const cities = ["Delhi", "Kochi", "Mumbai", "Mysore"];
+    Return the first city that starts with "M".
+8.  const data = [10, "apple", 20, "banana", 30, true, "mango"];
+    Return only the numbers.
+9.  const data = [10, "hello", 25, true, 15, "world"];
+    Find the sum of only the numbers.
+10. const numbers = [1, 2, 3, 4, 5, 6];
+    Return only even numbers and double them.
