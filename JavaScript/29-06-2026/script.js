@@ -83,4 +83,29 @@ console.log(Math.floor(Math.random() * 10)); // 0 , 9
 console.log(Math.min(5, 3, 8, -4, 5, 2, 0));
 console.log(Math.max(5, 3, 8, -4, 5, 2, 0));
 
+// Date
 
+console.log(Date.now());
+
+const d = new Date();
+
+console.log(d.getDate())
+console.log(d.getDay())
+console.log(d.getFullYear())
+console.log(d.getHours())
+console.log(d.getMinutes())
+console.log(d.getSeconds())
+
+console.log(d.toString())
+console.log(d.toDateString())
+console.log(d.toTimeString())
+
+console.log(d.toLocaleString("en-IN", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+}).toUpperCase());
