@@ -20,8 +20,13 @@ const student = {
         city: "kozhikode",
         state: "keralam",
         pin_code: 675643
+    },
+    add: function () {
+        return student.age + student.rn;
     }
 }
+
+console.log(student.add());
 
 student.skills.push("node");
 student.skills.unshift("git");
@@ -30,4 +35,31 @@ student.grade = "A+"; // create, if it is not exists.
 
 console.log(student);
 
+// Object Methods
+
+// const obj = new Object();
+// obj.name = "Riya";
+// console.log(obj);
+
+// Object.keys(), Object.values(), Object.entries(), Object.freeze(), Object.seal(), Object.hasOwn()
+
+const valueResponse = Object.values(student);
+console.log(valueResponse);
+
+const keyResponse = Object.keys(student);
+console.log(keyResponse);
+
+const entriesResponse = Object.entries(student);
+console.log(entriesResponse);
+
+// Object.freeze(student);
+Object.seal(student);
+
+student.college = "GPTC"; 
+student.name = "sdhfgwieuhfksjdhfksjdf"; 
+
+console.log(student);
+
+const isOwn = Object.hasOwn(student.address, "pin_code");
+console.log(isOwn);
 
