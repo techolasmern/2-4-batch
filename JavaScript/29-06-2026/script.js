@@ -63,3 +63,24 @@ console.log(student);
 const isOwn = Object.hasOwn(student.address, "pin_code");
 console.log(isOwn);
 
+// Math -> Math Object
+
+console.log(Math.PI);
+console.log(Math.LOG10E)
+console.log(Math.SQRT2)
+console.log(Math.SQRT1_2);
+
+console.log(Math.abs(-20));
+console.log(Math.sqrt(81));
+
+console.log(Math.round(10.1));
+console.log(Math.ceil(10.01));
+console.log(Math.floor(10.99));
+
+
+console.log(Math.floor(Math.random() * 10)); // 0 , 9
+
+console.log(Math.min(5, 3, 8, -4, 5, 2, 0));
+console.log(Math.max(5, 3, 8, -4, 5, 2, 0));
+
+
