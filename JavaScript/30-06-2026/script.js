@@ -59,3 +59,18 @@ console.log(fn, sn, remaining);
 const studentInfo = { name: "Midhun", age: 20, place: "Kozhikode", mark: 90 };
 const { mark, place, ...rem } = studentInfo;
 console.log(mark, place, rem);
+
+// localStorage
+// sessionStorage
+
+// localStorage.removeItem("name");
+localStorage.setItem("name", "Midhun - 2");
+localStorage.clear();
+const localName = localStorage.getItem("name");
+console.log(localName);
+
+// sessionStorage
+// sessionStorage.setItem("temp_name", "amal");
+const sessionName = sessionStorage.getItem("temp_name");
+console.log(sessionName);
+
