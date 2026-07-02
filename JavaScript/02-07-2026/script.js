@@ -143,3 +143,4 @@ rejectedPromise.then((successRes) => {
 }).catch((errorRes) => {
     console.log("Promise rejected rejected:", errorRes);
 });
+
