@@ -46,13 +46,100 @@ const myPromise = () => {
 
 const promise = myPromise();
 
-console.log(promise);
+// console.log(promise);
 
-promise.then((successRes) => {
-    console.log("Promise fulfilled:", successRes);
+// promise.then((successRes) => {
+//     console.log("Promise fulfilled:", successRes);
+// }).catch((errorRes) => {
+//     console.log("Promise rejected:", errorRes);
+// }).finally(() => {
+//     console.log(promise);
+//     console.log("Promise finally");
+// })
+
+// Promise Methods
+
+// API -> Application Programming Interface
+
+// all, any, race, resolve, reject
+
+const p1 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve({ message: "promise p1 completed" });
+    }, 4000);
+});
+const p2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        reject({ message: "promise p2 completed" });
+    }, 2000);
+});
+const p3 = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve({ message: "promise p3 completed" });
+    }, 3000);
+});
+
+// p1.then((successRes) => {
+//     console.log("Promise p1 fulfilled:", successRes);
+// }).catch((errorRes) => {
+//     console.log("Promise p1 rejected:", errorRes);
+// })
+// p2.then((successRes) => {
+//     console.log("Promise p2 fulfilled:", successRes);
+// }).catch((errorRes) => {
+//     console.log("Promise p2 rejected:", errorRes);
+// })
+// p3.then((successRes) => {
+//     console.log("Promise p3 fulfilled:", successRes);
+// }).catch((errorRes) => {
+//     console.log("Promise p3 rejected:", errorRes);
+// })
+
+const allPromises = Promise.all([p1, p2, p3]);
+
+allPromises.then((successRes) => {
+    console.log("Promise all fulfilled:", successRes);
+    const [r1, r2, r3] = successRes;
+    console.log(r1, r2, r3);
 }).catch((errorRes) => {
-    console.log("Promise rejected:", errorRes);
-}).finally(() => {
-    console.log(promise);
-    console.log("Promise finally");
-})
+    console.log("Promise all rejected:", errorRes);
+});
+
+// any -> Return the first fulfilled promise.
+
+const anyPromises = Promise.any([p1, p2, p3]);
+
+anyPromises.then((successRes) => {
+    console.log("Promise any fulfilled:", successRes);
+}).catch((errorRes) => {
+    console.log("Promise any rejected:", errorRes);
+});
+
+// race -> Return the first settled (fulfilled or rejected) promise.
+
+const racePromises = Promise.race([p1, p2, p3]);
+
+racePromises.then((successRes) => {
+    console.log("Promise race fulfilled:", successRes);
+}).catch((errorRes) => {
+    console.log("Promise race rejected:", errorRes);
+});
+
+// resolve -> Return a fulfilled promise with the specified value.
+// reject -> Return a rejected promise with the specified reason.
+
+const resolvedPromise = Promise.resolve({ message: "promise resolved" });
+
+resolvedPromise.then((successRes) => {
+    console.log("Promise resolved fulfilled:", successRes);
+}).catch((errorRes) => {
+    console.log("Promise resolved rejected:", errorRes);
+});
+
+const rejectedPromise = Promise.reject({ message: "promise rejected" });
+
+rejectedPromise.then((successRes) => {
+    console.log("Promise rejected fulfilled:", successRes);
+}).catch((errorRes) => {
+    console.log("Promise rejected rejected:", errorRes);
+});
