@@ -30,3 +30,29 @@
 // }
 
 // setInterval(displayTime, 1000); //time in milliseconds
+
+// promise -> A way to handle asynchronous operations.
+// states of promise -> pending, fulfilled, rejected
+
+const myPromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve({ message: "promise completed" });
+        }, 5000);
+    });
+}
+
+// How to handle promise;
+
+const promise = myPromise();
+
+console.log(promise);
+
+promise.then((successRes) => {
+    console.log("Promise fulfilled:", successRes);
+}).catch((errorRes) => {
+    console.log("Promise rejected:", errorRes);
+}).finally(() => {
+    console.log(promise);
+    console.log("Promise finally");
+})
