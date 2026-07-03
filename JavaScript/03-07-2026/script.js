@@ -38,3 +38,21 @@ const handlePromise = async () => {
 }
 
 handlePromise();
+
+// API -> Application Programming Interface
+
+// json -> JavaScript Object Notation
+
+// jsonString
+const jsonStringOrg = '{ "name": "Techolas", "age": 25, "city": "Delhi", "country": "India", "phone": 9876543210 }';
+
+// parse -> convert jsonString to JavaScript Object
+const jsObj = JSON.parse(jsonStringOrg);
+console.log(jsObj);
+
+// stringify -> convert JavaScript Object to jsonString
+const jsonString = JSON.stringify(jsObj);
+console.log(jsonString);
+
+// sample
+localStorage.setItem("user", JSON.stringify({ name: "Techolas", age: 30 }));
