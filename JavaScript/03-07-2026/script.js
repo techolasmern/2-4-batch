@@ -39,8 +39,6 @@ const handlePromise = async () => {
 
 handlePromise();
 
-// API -> Application Programming Interface
-
 // json -> JavaScript Object Notation
 
 // jsonString
