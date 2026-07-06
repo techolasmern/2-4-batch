@@ -66,3 +66,30 @@ console.log(qElem);
 const qElements = document.querySelectorAll(".demo");
 console.log(qElements);
 // same as getElementsByClassName
+
+// create a p tag
+
+const newTag = document.createElement("p");
+newTag.innerText = "This tag created using DOM";
+newTag.id = "sample_id";
+newTag.className = "sample_class";
+document.body.appendChild(newTag);
+console.log(newTag);
+
+document.writeln("---------------------------------------------------------------<br><br>");
+
+const handleClick = () => {
+    const ul = document.createElement("ul");
+    const list = ["HTML", "CSS", "JS", "REACT", "NODE", "EXPRESS", "MONGODB"];
+    for (const item of list) {
+        const li = document.createElement("li");
+        li.style.cursor = "pointer"
+        li.onclick = () => {
+            li.remove();
+        }
+        li.innerText = item;
+        ul.appendChild(li);
+    }
+    ul.type = "square";
+    document.body.appendChild(ul);
+}
