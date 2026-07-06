@@ -93,3 +93,11 @@ const handleClick = () => {
     ul.type = "square";
     document.body.appendChild(ul);
 }
+
+const toggleTheme = () => {
+    const { backgroundColor, color } = document.body.style
+    const bg = backgroundColor == "black" ? "white" : "black";
+    const tColor = !color || color == "black" ? "white" : "black";
+    document.body.style.backgroundColor = bg;
+    document.body.style.color = tColor;
+}
