@@ -43,4 +43,30 @@ document.addEventListener("keydown", (event) => {
 })
 
 
+// cursor follower;
+
+const cursorFollower = document.getElementById("cursor_follower");
+
+document.addEventListener("mousemove", (e) => {
+    console.log(e.clientX, e.clientY);
+    const x = e.clientX;
+    const y = e.clientY;
+    cursorFollower.style.left = x + "px";
+    cursorFollower.style.top = y + "px";
+})
+
+// contextmenu event;
+const contextMenu = document.getElementById("contextMenu");
+document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+    contextMenu.style.display = "flex";
+    const x = event.clientX;
+    const y = event.clientY;
+    contextMenu.style.left = x + "px";
+    contextMenu.style.top = y + "px";
+})
+contextMenu.addEventListener("click", () => {
+    contextMenu.style.display = "none";
+})
+
 
