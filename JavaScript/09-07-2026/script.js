@@ -31,3 +31,27 @@ const sendMail = async () => {
         return console.log(err);
     }
 }
+
+// localstorage
+
+const getStudents = () => {
+    const storedData = localStorage.getItem("students");
+    const studentsArray = storedData ? JSON.parse(storedData) : [];
+    return studentsArray;
+}
+
+const setStudents = (studentsArray) => {
+    const toJson = JSON.stringify(studentsArray);
+    return localStorage.setItem("students", toJson);
+}
+
+const addStudent = (student) => {
+    const students = getStudents();
+    console.log(students)
+    students.push(student);
+    return setStudents(students);
+}
+
+// addStudent({ rn: 1894, name: "Amal", age: 24, course: "PYTHON", phone: 8765435674 })
+
+console.log(getStudents())

@@ -1,0 +1,12 @@
+1. Handle contact form using html, css, js and emailjs
+
+2. Student Activity Manager App
+     Features:
+         Add student
+         Edit/Delete
+         Total count
+         Save to LocalStorage
+         Search filter
+Uses DOM, Events, LocalStorage, Functions — perfect for revision
+
+jquery 
