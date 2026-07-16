@@ -1,0 +1,20 @@
+What is React?
+React is a javascript library for creating user interfaces (UI).
+
+ Features of React
+
+SPA -> Single Page Application
+Component based Arch. -> Smallest building block
+Virtual DOM -> lightweight copy of Real/Actual DOM.
+JSX -> javascript xml -> HTML like syntax
+large community
+
+ Why React is used -> fast rendering, optimization, virtual DOM
+
+Bundler tool -> Vite, webpack
+
+npm -> node package manager
+
+create new react project -> npm create vite <folder_name>
+
+React DOM -> sync changes from vdom (virtual dom) to rdom (real dom);
