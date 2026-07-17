@@ -72,3 +72,77 @@ const v = new Car("BMW", "X5", 2024);
 
 console.log(v.getVehicle("Car"))
 console.log(v.superCall());
+
+// create a todo list
+
+// const todo = {
+//     id: xxxxxxxx,
+//     title: xxxxxxxxx,
+//     description: xxxxxxxxxx,
+//     createdAt: xxxxxxxxxxxxxxx,
+//     updatedAt: xxxxxxxxxxxxxx
+// }
+
+class Todo{
+    constructor() {
+        this.todo_list = [];
+    }
+
+    #getId = () => {
+        const str = "abcdef0123456789";
+        const arr = [];
+        let len = 10;
+        while (len--) {
+            const randomIndex = Math.floor(Math.random() * str.length);
+            const randomChar = str[randomIndex];
+            arr.push(randomChar);
+        }
+        return arr.join("");
+    }
+
+    insertOne = (title, description) => {
+        const todoObj = {
+            id: this.#getId(),
+            title, description,
+            createdAt: new Date(),
+            updatedAt: new Date()
+        }
+        this.todo_list.unshift(todoObj);
+        return todoObj;
+    }
+    
+    deleteOne = (id) => {
+        const deleted = this.todo_list.find(todo => todo.id == id);
+        this.todo_list = this.todo_list.filter(todo => todo.id != id);
+        return deleted;
+    }
+
+    updateOne = (id, updatedObj) => {
+        const index = this.todo_list.findIndex(todo => todo.id == id);
+        if (index == -1) {
+            return "Todo does not exists."
+        }
+        this.todo_list[index] = {
+            ...this.todo_list,
+            ...updatedObj,
+            updatedAt: new Date()
+        }
+        return this.todo_list[index];
+    }
+
+    // view single task -> HW
+
+    list = () => {
+        return this.todo_list;
+    }
+}
+
+const todo = new Todo();
+
+console.log(todo.insertOne("Sample 1", "This is a sample task 1"));
+console.log(todo.insertOne("Sample 2", "This is a sample task 2"));
+
+console.log(todo.list())
+
+// add validations
+// use local storage
