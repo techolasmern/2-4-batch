@@ -15,21 +15,21 @@ class App extends Component{
     // }
 
     state = {
-        data: 20,
+        data: 10,
         counter: 0
     }
 
-    handleClick() {
+    handleClick = () => {
         this.setState({
             data: 20
         })
     }
 
-    increment() {
-        this.setState({ ...this.state, counter: this.state.counter + 1 })
+    increment = (value) => {
+        this.setState({ ...this.state, counter: this.state.counter + value })
     }
 
-    decrement() {
+    decrement = () => {
         this.setState({ ...this.state, counter: this.state.counter - 1 });
     }
 
@@ -37,7 +37,7 @@ class App extends Component{
         return <div>
             <div>State Data: {this.state.data}</div>
             <div>
-                <button onClick={() => this.handleClick()}>Update Val</button>
+                <button onClick={this.handleClick}>Update Val</button>
             </div>
             <ul>
                 <li>Apple</li>
@@ -47,8 +47,8 @@ class App extends Component{
             </ul>
             <div>
                 counter: {this.state.counter}
-                <button onClick={()=>this.increment()}>+</button>
-                <button onClick={() => this.decrement()}>-</button>
+                <button onClick={() => this.increment(10)}>+</button>
+                <button onClick={this.decrement}>-</button>
             </div>
         </div>
     }
