@@ -1,25 +1,57 @@
-const App = () => {
-    return <div>
-        <ol>
-            <li>first one</li>
-            <li>second one</li>
-            <li>third one</li>
-        </ol>
-    </div>;
-};
+// class components
+// functional components
+import { Component } from "react";
+// variable -> manage data
+// state -> An object, for managing data in a component
 
-const About = () => {
-    return <div>
-        <h1>About Text</h1>
-    </div>
+class App extends Component{
+
+    // constructor(props) {
+    //     super(props)
+
+    //     this.state = {
+    //         data: 0
+    //     }
+    // }
+
+    state = {
+        data: 20,
+        counter: 0
+    }
+
+    handleClick() {
+        this.setState({
+            data: 20
+        })
+    }
+
+    increment() {
+        this.setState({ ...this.state, counter: this.state.counter + 1 })
+    }
+
+    decrement() {
+        this.setState({ ...this.state, counter: this.state.counter - 1 });
+    }
+
+    render() {
+        return <div>
+            <div>State Data: {this.state.data}</div>
+            <div>
+                <button onClick={() => this.handleClick()}>Update Val</button>
+            </div>
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Mango</li>
+                <li>Orange</li>
+            </ul>
+            <div>
+                counter: {this.state.counter}
+                <button onClick={()=>this.increment()}>+</button>
+                <button onClick={() => this.decrement()}>-</button>
+            </div>
+        </div>
+    }
 }
 
-export const Contact = () => { // named export
-    return <div>
-        <h1>Contact Text</h1>
-    </div>
-}
-
-export default {
-    App, About
-}; // default export
+export default App;
