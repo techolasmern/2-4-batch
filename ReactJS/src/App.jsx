@@ -1,55 +1,39 @@
-// class components
-// functional components
 import { Component } from "react";
-// variable -> manage data
-// state -> An object, for managing data in a component
+
+// life cycle -> mounting, updating, unmounting
+
 
 class App extends Component{
 
-    // constructor(props) {
-    //     super(props)
+    state = { counter: 0 };
 
-    //     this.state = {
-    //         data: 0
-    //     }
-    // }
-
-    state = {
-        data: 10,
-        counter: 0
-    }
-
-    handleClick = () => {
-        this.setState({
-            data: 20
+    increment = () => {
+        this.setState(prev => {
+            return {...prev, counter: prev.counter + 1}
         })
     }
 
-    increment = (value) => {
-        this.setState({ ...this.state, counter: this.state.counter + value })
+    // Mounting
+    componentDidMount = () => { // api calling
+        console.log("Mounting phase");
     }
 
-    decrement = () => {
-        this.setState({ ...this.state, counter: this.state.counter - 1 });
+    // Updating
+    componentDidUpdate = () => {
+        console.log("Counter Updated"); 
+    }
+
+    // Unmounting
+    componentWillUnmount = () => {
+        console.log("Component Unmounted");
     }
 
     render() {
         return <div>
-            <div>State Data: {this.state.data}</div>
-            <div>
-                <button onClick={this.handleClick}>Update Val</button>
-            </div>
-            <ul>
-                <li>Apple</li>
-                <li>Banana</li>
-                <li>Mango</li>
-                <li>Orange</li>
-            </ul>
-            <div>
-                counter: {this.state.counter}
-                <button onClick={() => this.increment(10)}>+</button>
-                <button onClick={this.decrement}>-</button>
-            </div>
+            <h1>React Component</h1>
+            <div>Counter: {this.state.counter}</div>
+            <br />
+            <button onClick={this.increment}>Increment</button>
         </div>
     }
 }
