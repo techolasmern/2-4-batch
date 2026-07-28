@@ -1,9 +1,11 @@
+/**
+ * @param {import("react").CSSProperties} styles
+ */
+
+const apply = (styles) => styles;
+
 export const style = {
-    heading: {
-        color: "red",
-        backgroundColor: "black",
-        padding: "20px",
-        fontFamily: "monospace",
-        textAlign: "center"
-    }
+    heading: apply({
+        
+    })
 }
