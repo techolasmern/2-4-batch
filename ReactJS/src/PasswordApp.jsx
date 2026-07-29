@@ -24,7 +24,8 @@ const PasswordApp = () => {
     
     return <div>
         <h4>Generated Password: {passwords[0]}</h4>
-        <button onClick={() => generatePassword(10)}>Generate</button>
+        <button onClick={() => generatePassword(15)}>Generate</button>
+        {errorMessage}
         <h2>Password History</h2>
         {
             passwords.map((pass, index) => {
