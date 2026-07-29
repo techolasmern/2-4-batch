@@ -5,7 +5,7 @@ import { ComponentA } from "./components/ComponentA";
 
 // Props -> Properties -> Pass or transfer data from parent component to child component.
 
-const App = () => {
+export const App = () => {
 
     const [counter, setCounter] = useState(0);
 
@@ -18,5 +18,3 @@ const App = () => {
         <ComponentA value={counter} handleClick={handleClick} />
     </Fragment>
 }
-
-export default App;
