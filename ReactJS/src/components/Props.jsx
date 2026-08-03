@@ -1,7 +1,7 @@
 // import { Fragment } from "react";
 
 import { Fragment, useState } from "react";
-import { ComponentA } from "./components/ComponentA";
+import { ComponentA } from "./ComponentA";
 
 // Props -> Properties -> Pass or transfer data from parent component to child component.
 
