@@ -1,9 +1,18 @@
 import { useContext } from "react";
-import { Context } from "../App";
+import { Link } from "react-router";
+import { Context } from "../Providers/SampleProvider";
 
 export const PageB = () => {
 
-    const response = useContext(Context);
+    const { counter, setCounter } = useContext(Context);
 
-    return <div>PageB - {response}</div>
+    const handleUpdate = () => {
+        setCounter(counter + 1);
+    }
+
+    return <div>PageB - {counter}
+        <br />
+        <button onClick={handleUpdate}>Click</button>
+        <Link to="/page-a">Go To Page A</Link>   
+    </div>
 };
