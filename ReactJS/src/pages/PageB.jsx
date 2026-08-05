@@ -12,7 +12,7 @@ export const PageB = () => {
 
     return <div>PageB - {counter}
         <br />
-        <button onClick={handleUpdate}>Click</button>
+        <button onClick={handleUpdate} className="btn btn-primary">Click</button>
         <Link to="/page-a">Go To Page A</Link>   
     </div>
 };

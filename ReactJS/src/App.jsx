@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { NotificationPage } from "./pages/NotificationPage";
 import { PaymentPage } from "./pages/PaymentPage";
 import { PageA } from "./pages/PageA";
 import { PageB } from "./pages/PageB";
+import { StorePage } from "./pages/StorePage";
+import { CartPage } from "./pages/CartPage";
 
 // export const App = () => {
 //     return <BrowserRouter>
@@ -28,11 +29,11 @@ import { PageB } from "./pages/PageB";
 // Nested Routing
 export const App = () => {
 
-
     return <BrowserRouter>
         <Routes>
             <Route path="/">
-                <Route path="" Component={HomePage} />
+                <Route path="" Component={StorePage} />
+                <Route path="cart" Component={CartPage} />
                 <Route path="about" Component={AboutPage} />
                 <Route path="settings">
                     <Route path="notification" Component={NotificationPage} />
