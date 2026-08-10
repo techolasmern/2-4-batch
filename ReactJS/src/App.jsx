@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { BrowserRouter, Routes, Route, Link } from "react-router";
 import { AboutPage } from "./pages/AboutPage";
 import { NotificationPage } from "./pages/NotificationPage";
 import { PaymentPage } from "./pages/PaymentPage";
@@ -6,6 +6,7 @@ import { PageA } from "./pages/PageA";
 import { PageB } from "./pages/PageB";
 import { StorePage } from "./pages/StorePage";
 import { CartPage } from "./pages/CartPage";
+import { DynamicRoutePage } from "./pages/DynamicRoutePage";
 
 // export const App = () => {
 //     return <BrowserRouter>
@@ -24,6 +25,7 @@ import { CartPage } from "./pages/CartPage";
 //     </BrowserRouter>
 // }
 
+// dynamic routing
 
 
 // Nested Routing
@@ -33,6 +35,9 @@ export const App = () => {
         <Routes>
             <Route path="/">
                 <Route path="" Component={StorePage} />
+                <Route path="dynamic">
+                    <Route path=":id" Component={DynamicRoutePage} />
+                </Route>
                 <Route path="cart" Component={CartPage} />
                 <Route path="about" Component={AboutPage} />
                 <Route path="settings">
