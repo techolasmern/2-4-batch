@@ -7,6 +7,7 @@ import { PageB } from "./pages/PageB";
 import { StorePage } from "./pages/StorePage";
 import { CartPage } from "./pages/CartPage";
 import { DynamicRoutePage } from "./pages/DynamicRoutePage";
+import { AxiosPage } from "./pages/AxiosPage";
 
 // export const App = () => {
 //     return <BrowserRouter>
@@ -44,6 +45,7 @@ export const App = () => {
                     <Route path="notification" Component={NotificationPage} />
                     <Route path="payment" Component={PaymentPage} />
                 </Route>
+                <Route path="axios" Component={AxiosPage} />
                 <Route path="page-a" Component={PageA} />
                 <Route path="page-b" Component={PageB} />
             </Route>
