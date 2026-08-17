@@ -17,7 +17,7 @@ export const FormPage = () => {
         }
         const nameRegex = /^[a-zA-Z\s'`]+$/;
         const usernameRegex = /^[a-z0-9_]+$/;
-        const phoneRegex = /^[0-9]+$/;
+        const phoneRegex = /^[0-9]{10}$/;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$/;
         if(!nameRegex.test(formData.name)) {
