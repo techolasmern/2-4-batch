@@ -81,7 +81,6 @@ export const FormPage = () => {
     }
 
     return <div className="vw-100 d-flex justify-content-center">
-        {formData.name}
         <form className="w-100" style={{ maxWidth: "450px" }} onSubmit={handleSubmit}>
             <div className="d-flex flex-column">
                 <label htmlFor="name">Name</label>
