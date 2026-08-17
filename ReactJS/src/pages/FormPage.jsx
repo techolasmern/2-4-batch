@@ -5,20 +5,76 @@ export const FormPage = () => {
     const [formData, setFormData] = useState({
         name: "", username: "", phone: "", email: "", password: "", confirm_password: "",
     });
+    const [errors, setErrors] = useState({ name: "", username: "", phone: "", email: "", password: "", confirm_password: "", });
+
+    const validateForm = () => {
+        for (const key in formData) {
+            if (!formData[key]) {
+                return setErrors((err) => {
+                    return { ...err, [key]: "This field isrequired!" };
+                });
+            }
+        }
+        const nameRegex = /^[a-zA-Z\s'`]+$/;
+        const usernameRegex = /^[a-z0-9_]+$/;
+        const phoneRegex = /^[0-9]+$/;
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$/;
+        if(!nameRegex.test(formData.name)) {
+            return setErrors((err) => {
+                return { ...err, name: "Name must contain only letters and apostrophes!" };
+            });
+        }
+        if(!usernameRegex.test(formData.username)) {
+            return setErrors((err) => {
+                return { ...err, username: "Username must contain only letters, numbers, and underscores!" };
+            });
+        }
+        if(!phoneRegex.test(formData.phone)) {
+            return setErrors((err) => {
+                return { ...err, phone: "Phone must contain only numbers!" };
+            });
+        }
+        if(!emailRegex.test(formData.email)) {
+            return setErrors((err) => {
+                return { ...err, email: "Email must be a valid email address!" };
+            });
+        }
+        if(!passwordRegex.test(formData.password)) {
+            return setErrors((err) => {
+                return { ...err, password: "Password must contain at least one lowercase letter, one uppercase letter, and one number!" };
+            });
+        }
+        if(formData.password !== formData.confirm_password) {
+            return setErrors((err) => {
+                return { ...err, confirm_password: "Passwords do not match!" };
+            });
+        }
+        return true;
+    }
 
     const handleChange = (event) => {
+        let { name, value } = event.target;
+        if (errors[name]) {
+            setErrors(prevErrors => {
+                return { ...prevErrors, [name]: "" };
+            });
+        }
         setFormData((prevFormData) => {
-            if (event.target.name === "username") {
-                event.target.value = event.target.value.toLowerCase();
+            if (name === "username") {
+                value = value.toLowerCase();
             }
-            return { ...prevFormData, [event.target.name]: event.target.value };
+            return { ...prevFormData, [name]: value };
         })
     }
 
     const handleSubmit = (submitEvent) => {
         submitEvent.preventDefault();
-        // validate form
-        console.log(formData)
+        const isValidForm = validateForm();
+        if (!isValidForm) {
+            return console.log("Invalid");
+        }
+        
     }
 
     return <div className="vw-100 d-flex justify-content-center">
@@ -26,26 +82,32 @@ export const FormPage = () => {
             <div className="d-flex flex-column">
                 <label htmlFor="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="John" defaultValue={formData.name} />
+                <span className="text-danger">{errors.name}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="johnuser001" defaultValue={formData.username} />
+                <span className="text-danger">{errors.username}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="phone">Phone</label>
                 <input type="text" id="phone" name="phone" placeholder="9876543210" defaultValue={formData.phone} />
+                <span className="text-danger">{errors.phone}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="email">Email</label>
                 <input type="text" id="email" name="email" placeholder="john@example.com" defaultValue={formData.email} />
+                <span className="text-danger">{errors.email}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="*********" defaultValue={formData.password} />
+                <span className="text-danger">{errors.password}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="confirm_password">Confirm Password</label>
                 <input type="password" id="confirm_password" name="confirm_password" placeholder="*********" defaultValue={formData.confirm_password} />
+                <span className="text-danger">{errors.confirm_password}</span>
             </div>
 
             <button type="submit" className="btn btn-success w-100 mt-3">Create Account</button>
