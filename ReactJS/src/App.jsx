@@ -8,6 +8,7 @@ import { StorePage } from "./pages/StorePage";
 import { CartPage } from "./pages/CartPage";
 import { DynamicRoutePage } from "./pages/DynamicRoutePage";
 import { AxiosPage } from "./pages/AxiosPage";
+import { FormPage } from "./pages/FormPage";
 
 // export const App = () => {
 //     return <BrowserRouter>
@@ -36,6 +37,7 @@ export const App = () => {
         <Routes>
             <Route path="/">
                 <Route path="" Component={StorePage} />
+                <Route path="/form" Component={FormPage} />
                 <Route path="dynamic">
                     <Route path=":id" Component={DynamicRoutePage} />
                 </Route>
