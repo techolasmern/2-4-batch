@@ -71,42 +71,46 @@ export const FormPage = () => {
     const handleSubmit = (submitEvent) => {
         submitEvent.preventDefault();
         const isValidForm = validateForm();
+        console.log(isValidForm);
         if (!isValidForm) {
             return console.log("Invalid");
         }
-        
+        setFormData({
+            name: "", username: "", phone: "", email: "", password: "", confirm_password: "",
+        });
     }
 
     return <div className="vw-100 d-flex justify-content-center">
-        <form className="w-100" style={{ maxWidth: "450px" }} onSubmit={handleSubmit} onChange={handleChange}>
+        {formData.name}
+        <form className="w-100" style={{ maxWidth: "450px" }} onSubmit={handleSubmit}>
             <div className="d-flex flex-column">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="John" defaultValue={formData.name} />
+                <input type="text" id="name" name="name" placeholder="John" value={formData.name} onChange={handleChange} />
                 <span className="text-danger">{errors.name}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="johnuser001" defaultValue={formData.username} />
+                <input type="text" id="username" name="username" placeholder="johnuser001" value={formData.username} onChange={handleChange} />
                 <span className="text-danger">{errors.username}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="phone">Phone</label>
-                <input type="text" id="phone" name="phone" placeholder="9876543210" defaultValue={formData.phone} />
+                <input type="text" id="phone" name="phone" placeholder="9876543210" value={formData.phone} onChange={handleChange} />
                 <span className="text-danger">{errors.phone}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="email">Email</label>
-                <input type="text" id="email" name="email" placeholder="john@example.com" defaultValue={formData.email} />
+                <input type="text" id="email" name="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} />
                 <span className="text-danger">{errors.email}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="*********" defaultValue={formData.password} />
+                <input type="password" id="password" name="password" placeholder="*********" value={formData.password} onChange={handleChange} />
                 <span className="text-danger">{errors.password}</span>
             </div>
             <div className="d-flex flex-column">
                 <label htmlFor="confirm_password">Confirm Password</label>
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="*********" defaultValue={formData.confirm_password} />
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="*********" value={formData.confirm_password} onChange={handleChange} />
                 <span className="text-danger">{errors.confirm_password}</span>
             </div>
 
