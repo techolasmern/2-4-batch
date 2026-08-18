@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { localLogin, setLocalData } from "../lib/storage"
+import { useEffect, useState } from "react";
+import { getLoggedUser, localLogin, setLocalData, setLoggedUser } from "../lib/storage"
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 
@@ -10,6 +10,13 @@ export const LoginPage = () => {
     });
     const navigate = useNavigate();
     const [errors, setErrors] = useState({ username: "", password: "", });
+
+    useEffect(() => {
+        const loggedUser = getLoggedUser();
+        if (loggedUser) {
+            return navigate("/dashboard", { replace: true });
+        }
+    }, []);
 
     const validateForm = () => {
         for (const key in formData) {
@@ -61,6 +68,7 @@ export const LoginPage = () => {
             setFormData({
                 username: "", password: "",
             });
+            setLoggedUser(res.email);
             return navigate("/dashboard", { replace: true });
         } 
         setErrors(prev => {

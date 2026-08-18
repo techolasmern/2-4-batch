@@ -38,10 +38,16 @@ export const setLocalData = (userData) => {
     return { ok: true };
 }
 
-const setLoggedUser = (email) => {
+export const setLoggedUser = (email) => {
     localStorage.setItem("logged_user", email);
+    return true;
 }
 
-const getLoggedUser = () => {
+export const getLoggedUser = () => {
     return localStorage.getItem("logged_user");
+}
+
+export const logout = () => {
+    localStorage.removeItem("logged_user");
+    return true;
 }
