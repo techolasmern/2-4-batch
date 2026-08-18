@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { setLocalData } from "../lib/storage"
 
 export const FormPage = () => {
 
@@ -75,9 +76,15 @@ export const FormPage = () => {
         if (!isValidForm) {
             return console.log("Invalid");
         }
-        setFormData({
-            name: "", username: "", phone: "", email: "", password: "", confirm_password: "",
-        });
+        const res = setLocalData(formData);
+        if (res.ok) {
+            return setFormData({
+                name: "", username: "", phone: "", email: "", password: "", confirm_password: "",
+            });
+        } 
+        setErrors(prev => {
+            return { ...prev, [res.field]: res.error };
+        })
     }
 
     return <div className="vw-100 d-flex justify-content-center">
