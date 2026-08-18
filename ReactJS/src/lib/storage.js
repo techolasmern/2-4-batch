@@ -38,3 +38,10 @@ export const setLocalData = (userData) => {
     return { ok: true };
 }
 
+const setLoggedUser = (email) => {
+    localStorage.setItem("logged_user", email);
+}
+
+const getLoggedUser = () => {
+    return localStorage.getItem("logged_user");
+}

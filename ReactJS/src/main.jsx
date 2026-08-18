@@ -4,6 +4,7 @@ import "./main.css";
 import { App } from "./App";
 import { SampleProvider } from "./Providers/SampleProvider";
 import { CartProvider } from './Providers/CartProvider';
+import { ToastContainer } from 'react-toastify';
 
 const rootContainer = document.getElementById("root");
 
@@ -12,5 +13,6 @@ const root = createRoot(rootContainer);
 root.render(<SampleProvider>
     <CartProvider>
         <App />
+        <ToastContainer />
     </CartProvider>
 </SampleProvider>);

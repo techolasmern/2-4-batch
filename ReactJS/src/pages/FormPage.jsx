@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { setLocalData } from "../lib/storage"
+import { toast } from "react-toastify";
 
 export const FormPage = () => {
 
@@ -72,12 +73,10 @@ export const FormPage = () => {
     const handleSubmit = (submitEvent) => {
         submitEvent.preventDefault();
         const isValidForm = validateForm();
-        console.log(isValidForm);
-        if (!isValidForm) {
-            return console.log("Invalid");
-        }
+        if (!isValidForm) return;
         const res = setLocalData(formData);
         if (res.ok) {
+            toast.success("Registration successful!");
             return setFormData({
                 name: "", username: "", phone: "", email: "", password: "", confirm_password: "",
             });

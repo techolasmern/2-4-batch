@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { localLogin, setLocalData } from "../lib/storage"
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
 
 export const LoginPage = () => {
 
     const [formData, setFormData] = useState({
         username: "",password: ""
     });
+    const navigate = useNavigate();
     const [errors, setErrors] = useState({ username: "", password: "", });
 
     const validateForm = () => {
@@ -51,14 +54,14 @@ export const LoginPage = () => {
         submitEvent.preventDefault();
         const isValidForm = validateForm();
         console.log(isValidForm);
-        if (!isValidForm) {
-            return console.log("Invalid");
-        }
+        if (!isValidForm) return;
         const res = localLogin(formData.username, formData.password);
         if (res.ok) {
-            return setFormData({
+            toast.success("Login successful!");
+            setFormData({
                 username: "", password: "",
             });
+            return navigate("/dashboard", { replace: true });
         } 
         setErrors(prev => {
             return { ...prev, [res.field]: res.error };
