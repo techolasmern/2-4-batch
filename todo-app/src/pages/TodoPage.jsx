@@ -5,6 +5,7 @@ export const TodoPage = () => {
 
     const [todo, setTodo] = useState("");
     const [todoList, setTodoList] = useState([]);
+    const [editTodo, setEditTodo] = useState(null);
 
     const handleChange = (event) => {
         setTodo(event.target.value);
@@ -46,6 +47,22 @@ export const TodoPage = () => {
         })
     }
 
+    const handleEdit = (todo_id) => {
+        const task = todoList.find(todo => todo.task_id == todo_id)
+        setEditTodo(task);
+    }
+
+    const handleTodoUpdate = (todoObj) => {
+        const updatedList = todoList.map(todo => {
+            if (todo.task_id == todoObj.task_id) {
+                return todoObj;
+            }
+            return todo;
+        })
+        setTodoList(updatedList);
+        setEditTodo(null);
+    }
+
     return <div>
         <h1>Todo Application</h1>
         <div className="input-container">
@@ -61,6 +78,9 @@ export const TodoPage = () => {
                         single_todo={single_todo}
                         handleCompleted={handleCompleted}
                         handleDelete={handleDelete}
+                        handleEdit={handleEdit}
+                        editTodo={editTodo}
+                        handleTodoUpdate={handleTodoUpdate}
                     />
                 })
             }

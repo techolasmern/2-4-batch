@@ -9,6 +9,8 @@ export const ConditionalRendering = () => {
     }
 
     return <div>
+        {/* hello { show ? "10" : null } */}
+        Hello { show && "wiru" }
         This is { show ? "true" : "false" } render - <button onClick={handleShow}>Toggle</button> 
     </div>;
 };
