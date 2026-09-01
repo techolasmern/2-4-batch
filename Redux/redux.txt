@@ -1,0 +1,4 @@
+state -> state contains the data managed by the redux
+action -> An action describe what happend.
+reducer -> Determines how the state should change based on an action.
+store -> centralized store (Holds all the states);
