@@ -6,7 +6,8 @@ const getProducts = async () => {
     return response.data.products;
 }
 
-export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
+export const fetchProducts = createAsyncThunk("products/fetchProducts", async (id) => {
+    console.log(id);
     const response = await getProducts();
     return response;
 });
