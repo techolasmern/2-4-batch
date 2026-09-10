@@ -1,30 +1,24 @@
 import { useEffect, useState } from "react";
 import { api } from "../axios";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../redux/products.slice";
 
 export const Products = () => {
 
-    const [isLoading, setLoading] = useState(true);
-    const [products, setProducts] = useState([]);
-
-    const getProducts = async () => {
-        setLoading(true);
-        try {
-            const response = await api.get("/products");
-            setProducts(response.data.products);
-        } catch (err) {
-            return alert(err.message);
-        } finally {
-            setLoading(false);
-        }
-    }
+    const { products, loading, error } = useSelector(state => state.products);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        getProducts();
+        dispatch(fetchProducts());
     }, [])
 
-    if (isLoading) {
+    if (loading) {
         return <div>Loading...</div>
     }
 
-    return <div>{console.log(products)}</div>
+    if (error) {
+        return <div>Error: {error}</div>
+    }
+
+    return <div>Products: {console.log(products)}</div>
 };
