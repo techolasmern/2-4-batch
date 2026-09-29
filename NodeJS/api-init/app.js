@@ -7,7 +7,7 @@ const http = require("http");
 const server = http.createServer();
 
 server.on("request", (request, response) => {
-    response.writeHead(400, { "Content-Type": "application/json" });
+    response.writeHead(200, { "Content-Type": "application/json" });
     const jsonData = JSON.stringify({ message: "Hello World" });
     response.end(jsonData);
 });
