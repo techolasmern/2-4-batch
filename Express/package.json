@@ -2,10 +2,10 @@
   "name": "Express",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "app.mjs",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "dev": "nodemon app.mjs",
+    "start": "node app.mjs"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +23,7 @@
     "nodemon": "^3.1.14"
   },
   "dependencies": {
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "mongoose": "^9.11.2"
   }
 }
