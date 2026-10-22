@@ -4,6 +4,23 @@ import { studentsModel } from "./models/students.model.mjs";
 
 const app = express();
 
+// middleware -> request and response
+// POST, PATCH, PUT -> Body -> JSONString -> Object
+app.use(express.json());
+
+app.use((request, response, next) => {
+    const requestedPath = request.url;
+    const requestedMethod = request.method;
+    const startTime = Date.now();
+    response.on("finish", () => {
+        const endTime = Date.now();
+        const diff = endTime - startTime;
+        const statusCode = response.statusCode;
+        console.log(`${requestedMethod} ${requestedPath} ${statusCode} -${diff}ms`);
+    });
+    next();
+});
+
 app.get("/api/students", async (request, response) => {
     try {
         const query = request.query;
@@ -19,8 +36,9 @@ app.get("/api/students", async (request, response) => {
     }
 });
 
-app.listen(3000, async () => {
+
+app.listen(5000, async () => {
     await connect_db();
-    console.log("Server running on port 3000");
+    console.log("Server running on port 5000");
 });
 
