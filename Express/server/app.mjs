@@ -1,9 +1,9 @@
 import express from "express";
 import { connect_db } from "./config/db.config.mjs";
 import { studentsModel } from "./models/students.model.mjs";
-import { requestLogger } from "./middleware/logger.mjs";
 import morgan from "morgan";
 import cors from "cors";
+import bcrypt from "bcrypt";
 
 const app = express();
 
@@ -50,6 +50,21 @@ app.get("/api/students{/:rollNumber}", async (request, response) => {
     }
 })
 
+app.post("/api/password", async (request, response) => {
+    try {
+        const body = request.body;
+        const { password } = body;
+        // install bcrypt -> (npm i bcrypt) or (pnpm add bcrypt)
+        const res = await bcrypt.hash(password, 10);
+        return response.status(200).send({
+            hashedPassword: res
+        });
+    } catch (err) {
+        return response.status(500).send({
+            message: "Error while processing password"
+        });
+    }
+});
 
 app.listen(5000, async () => {
     await connect_db();
