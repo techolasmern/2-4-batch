@@ -4,6 +4,7 @@ import { studentsModel } from "./models/students.model.mjs";
 import morgan from "morgan";
 import cors from "cors";
 import bcrypt from "bcrypt";
+import { passwordModel } from "./models/password.model.mjs";
 
 const app = express();
 
@@ -50,18 +51,50 @@ app.get("/api/students{/:rollNumber}", async (request, response) => {
     }
 })
 
-app.post("/api/password", async (request, response) => {
+app.post("/api/passwords", async (request, response) => {
     try {
         const body = request.body;
         const { password } = body;
         // install bcrypt -> (npm i bcrypt) or (pnpm add bcrypt)
-        const res = await bcrypt.hash(password, 10);
-        return response.status(200).send({
-            hashedPassword: res
-        });
+        const hash = await bcrypt.hash(password, 10);
+        const passwordDoc = await passwordModel.create({ hash });
+        if (!passwordDoc) {
+            throw new Error("Error while saving password");
+        }
+        return response.status(200).send({ hash });
     } catch (err) {
         return response.status(500).send({
             message: "Error while processing password"
+        });
+    }
+});
+
+app.post("/api/passwords/verify", async (request, response) => {
+    try {
+        const body = request.body;
+        const { password } = body;
+        const passwordDoc = await passwordModel.findOne();
+        if (!passwordDoc) {
+            return response.status(404).send({
+                message: "No password found"
+            });
+        }
+        const isMatched = await bcrypt.compare(password, passwordDoc.hash);
+        return response.status(200).send({ password_matched: isMatched });
+    } catch (err) {
+        return response.status(500).send({
+            message: "Error while verifying password"
+        });
+    }
+});
+
+app.get("/api/passwords", async (request, response) => {
+    try {
+        const docs = await passwordModel.find();
+        return response.status(200).send(docs);
+    } catch (err) {
+        return response.status(500).send({
+            message: "Error while fetching passwords"
         });
     }
 });
