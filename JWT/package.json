@@ -1,0 +1,28 @@
+{
+    "name": "JWT",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.mjs",
+    "scripts": {
+        "dev": "nodemon"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devEngines": {
+        "packageManager": {
+            "name": "pnpm",
+            "version": "12.18.0",
+            "onFail": "download"
+        }
+    },
+    "packageManager": "pnpm@12.18.0",
+    "type": "module",
+    "dependencies": {
+        "cors": "^2.8.6",
+        "dotenv": "^18.0.10",
+        "express": "^5.3.0",
+        "jsonwebtoken": "^9.0.3",
+        "morgan": "^1.12.1"
+    }
+}

@@ -1,9 +1,10 @@
+import "dotenv/config";
 import nodemailer from "nodemailer";
 
 export const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: "connect.icebergdev@gmail.com",
-        pass: "jacl faiv ohbz scal"
+        user: process.env.G_USER,
+        pass: process.env.G_PASS
     }
 });
