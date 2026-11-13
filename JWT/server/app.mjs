@@ -7,8 +7,12 @@ import authRouter from "./routes/auth.route.mjs";
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: process.env.ORIGIN_URL, methods: "*" }));
 app.use(morgan("dev"));
+
+app.use((req, res) => {
+    console.log(req.headers.authorization.split(" ")[1]);
+});
 
 app.use("/api/auth", authRouter);
 
