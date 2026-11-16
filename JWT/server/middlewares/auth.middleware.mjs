@@ -7,23 +7,23 @@ const auth = (request, response, next) => {
     try {
         const authorization = request.headers.authorization;
         if (!authorization) {
-            throw new Error();
+            return response.status(401).send({ message: ERR_MSG });
         }
         const [tokenType, tokenValue] = authorization.split(" ");
         if (tokenType !== "Bearer") {
-            throw new Error();
+            return response.status(401).send({ message: ERR_MSG });
         }
         try {
             const decoded = jwt.verify(tokenValue, process.env.JWT_PRIVATE_KEY);
             if (!decoded) {
-                throw new Error();
+                return response.status(401).send({ message: ERR_MSG });
             }
             next();
         } catch (err) {
             return response.status(401).send({ message: ERR_MSG });
         }
     } catch (err) {
-        return response.status(err.message ? 500 : 401).send({ message: err.message || ERR_MSG });
+        return response.status(500).send({ message: err.message || "Internal Server Error" });
     }
 }
 
