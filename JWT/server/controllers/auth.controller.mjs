@@ -17,7 +17,7 @@ const generateToken = (request, response) => {
 }
 
 const checkToken = (request, response) => {
-    return response.status(200).send({ message: "Token checked" });
+    return response.status(200).send({ message: "Token Valid" });
 }
 
 export default {
