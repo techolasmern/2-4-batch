@@ -31,4 +31,34 @@ const handleSendOTP = async (request, response) => {
     }
 }
 
-export default { handleSendOTP }
+const handleVerifyOTP = async (request, response) => {
+    try {
+        const { email, otp } = request.body;
+        if (!email || !otp) {
+            return response.status(400).send({ message: "Missing required fields" });
+        }
+        const otp_data = await OTPModel.findOne({ receiver_email: email });
+        if(!otp_data) {
+            return response.status(400).send({ message: "Please send OTP first before verifying" });
+        }
+        if (!otp_data.otp) {
+            return response.status(400).send({ message: "Invalid OTP" });
+        }
+        const current_time = Math.floor(Date.now() / 1000);
+        if (current_time > otp_data.expire_at) {
+            return response.status(400).send({ message: "OTP expired" });
+        }
+        if (otp_data.otp !== otp) {
+            return response.status(400).send({ message: "OTP is incorrect" });
+        }
+        otp_data.otp = "";
+        otp_data.expire_at = 0;
+        otp_data.resend_at = 0;
+        await otp_data.save();
+        return response.status(200).send({ message: "OTP verified successfully" });
+    } catch (error) {
+        return response.status(500).send({ message: "Internal Server Error" });
+    }
+}
+
+export default { handleSendOTP, handleVerifyOTP };
