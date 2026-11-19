@@ -61,4 +61,28 @@ const handleVerifyOTP = async (request, response) => {
     }
 }
 
-export default { handleSendOTP, handleVerifyOTP };
+const resendOTP = async (request, response) => {
+    try {
+        const { receiver_email } = request.body;
+        if (!receiver_email) {
+            return response.status(400).send({ message: "Receiver email is required" });
+        }
+        const otp_data = await OTPModel.findOne({ receiver_email });
+        if (!otp_data) {
+            return response.status(400).send({ message: "Please send OTP first before resending" });
+        }
+        const current_time = Math.floor(Date.now() / 1000);
+        if (current_time > otp_data.expire_at) {
+            return response.status(400).send({ message: "Please send OTP first before resending" });
+        }
+        if (current_time < otp_data.resend_at) {
+            const diff = otp_data.resend_at - current_time;
+            return response.status(400).send({ message: `OTP already sent, please wait for ${diff} seconds` });
+        }
+        return handleSendOTP(request, response);
+    } catch (error) {
+        return response.status(500).send({ message: "Internal Server Error" });
+    }
+}
+
+export default { handleSendOTP, handleVerifyOTP, resendOTP };
