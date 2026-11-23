@@ -1,21 +1,22 @@
 import { sendOTP } from "../lib/mail.lib.mjs";
 import { OTPModel } from "../models/otp.model.mjs";
+import { createError } from "../utils/error.utils.mjs";
 
-const handleSendOTP = async (request, response) => {
+const handleSendOTP = async (request, response, next) => {
     try {
         const { receiver_email } = request.body;
-        if(!receiver_email) {
-            return response.status(400).send({ message: "Receiver email is required" });
+        if (!receiver_email) {
+            throw createError("Receiver email is required", 400);
         }
         const user_exist = await OTPModel.findOne({ receiver_email });
         const currentTime = Math.floor(Date.now() / 1000);
         if (user_exist && currentTime < user_exist.resend_at) {
             const remTime = user_exist.resend_at - currentTime;
-            return response.status(400).send({ message: `OTP already sent, please wait for ${remTime} seconds` });
+            throw createError(`OTP already sent, please wait for ${remTime} seconds`, 400);
         }
         const res = await sendOTP(receiver_email);
         if (!res) {
-            return response.status(500).send({ message: "Failed to send OTP" });
+            throw createError("Failed to send OTP", 500);
         }
         if (!user_exist) {
             await OTPModel.create({ receiver_email, otp: res.otp, expire_at: currentTime + 300, resend_at: currentTime + 60 });
@@ -27,29 +28,29 @@ const handleSendOTP = async (request, response) => {
         }
         return response.status(200).send({ message: "OTP sent successfully", otp: res.otp });
     } catch (error) {
-        return response.status(500).send({ message: "Internal Server Error" });
+        next(error);
     }
 }
 
-const handleVerifyOTP = async (request, response) => {
+const handleVerifyOTP = async (request, response, next) => {
     try {
         const { email, otp } = request.body;
         if (!email || !otp) {
-            return response.status(400).send({ message: "Missing required fields" });
+            throw createError("Missing required fields", 400);
         }
         const otp_data = await OTPModel.findOne({ receiver_email: email });
         if(!otp_data) {
-            return response.status(400).send({ message: "Please send OTP first before verifying" });
+            throw createError("Please send OTP first before verifying", 400);
         }
         if (!otp_data.otp) {
-            return response.status(400).send({ message: "Invalid OTP" });
+            throw createError("OTP expired", 400);
         }
         const current_time = Math.floor(Date.now() / 1000);
         if (current_time > otp_data.expire_at) {
-            return response.status(400).send({ message: "OTP expired" });
+            throw createError("OTP expired", 400);
         }
         if (otp_data.otp !== otp) {
-            return response.status(400).send({ message: "OTP is incorrect" });
+            throw createError("OTP is incorrect", 400);
         }
         otp_data.otp = "";
         otp_data.expire_at = 0;
@@ -57,31 +58,31 @@ const handleVerifyOTP = async (request, response) => {
         await otp_data.save();
         return response.status(200).send({ message: "OTP verified successfully" });
     } catch (error) {
-        return response.status(500).send({ message: "Internal Server Error" });
+        next(error);
     }
 }
 
-const resendOTP = async (request, response) => {
+const resendOTP = async (request, response, next) => {
     try {
         const { receiver_email } = request.body;
         if (!receiver_email) {
-            return response.status(400).send({ message: "Receiver email is required" });
+            throw createError("Receiver email is required", 400);
         }
         const otp_data = await OTPModel.findOne({ receiver_email });
         if (!otp_data) {
-            return response.status(400).send({ message: "Please send OTP first before resending" });
+            throw createError("Please send OTP first before resending", 400);
         }
         const current_time = Math.floor(Date.now() / 1000);
         if (current_time > otp_data.expire_at) {
-            return response.status(400).send({ message: "Please send OTP first before resending" });
+            throw createError("OTP expired", 400);
         }
         if (current_time < otp_data.resend_at) {
             const diff = otp_data.resend_at - current_time;
-            return response.status(400).send({ message: `OTP already sent, please wait for ${diff} seconds` });
+            throw createError(`OTP already sent, please wait for ${diff} seconds`, 400);
         }
         return handleSendOTP(request, response);
     } catch (error) {
-        return response.status(500).send({ message: "Internal Server Error" });
+        next(error);
     }
 }
 
